@@ -1,7 +1,6 @@
 # deva-codes
 
-This app is hosted at: https://deva-codes.herokuapp.com
-
+This app is hosted at: https://deva-codes.herokuapp.com (visit for latest changes)
 This application lets one create a blog server.
 The content of the blog can be edited just by changing the "content.txt" file.
 
