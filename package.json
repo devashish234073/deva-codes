@@ -1,0 +1,14 @@
+{
+  "name": "my-site",
+  "version": "1.0.0",
+  "description": "my-site [my=devashish]",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "devashish234073"
+  ],
+  "author": "Devashish Priyadarshi",
+  "license": "ISC"
+}
