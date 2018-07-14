@@ -1,0 +1,26 @@
+-------------------------------------------------
+----URL:RndNumDiffProgs
+----HEAD:Random number generator in different languages
+----CONTENT-START:
+<h4>Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html">docs.oracle.com</a></h4>
+<code>Random rand = new Random();
+int value = rand.nextInt(50);  //generates number between [0,49]</code>
+<h4>JavaScript <a href="https://www.w3schools.com/jsref/jsref_random.asp">w3schools</a></h4>
+<code>Math.random() //generates number between [0,1)</code>
+<h4>Python <a href="https://docs.python.org/3.6/library/random.html?highlight=random#functions-for-integers">docs.python.org</a></h4>
+<code>import random
+a = random.randint(1,100) #generates number between [1,100]
+</code>
+<h4>c++</h4>
+<code>#include&lt;iostream&gt;
+<br>#include&lt;cstdio&gt;
+<br>#include&lt;time.h&gt;
+<br>using namespace std;
+<br>int main(int argc,char* argv[]){
+<br>    srand(time(NULL));
+<br>    int a = rand();
+<br>}</code>
+<h4>Perl</h4>
+<code>$a = rand(); //generates number between [0,1)</code>
+----CONTENT-END:
+-------------------------------------------------
