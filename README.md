@@ -8,9 +8,9 @@ The content of the blog can be edited just by changing the "content.txt" file.
 And
 #### "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" marks the end.
 
-#### content after "----URL:" serves the urls hosted
-#### and data between "----CONTENT-START:" and "----CONTENT-END:" serves the content.
-#### "----HEAD:" us used for gathering links to all the blogs in the homepage i.e. "/" url.
+#### content after "----URL:" marks the url where a particular blog is hosted
+#### and data between "----CONTENT-START:" and "----CONTENT-END:" serves the content for that particular blog
+#### "----HEAD:" is used for gathering the links to all the blogs in the homepage i.e. for preparing response to "/" url.
 
 #### Note: 
 #### 1."----HEAD:" and "----CONTENT-START:" must come after "----URL:"
