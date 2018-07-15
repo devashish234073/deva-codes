@@ -31,6 +31,16 @@ for(var i=0;i<data.length;i++){
                     contents[curr]=data[i];
                 } else {
                     contents[curr]+=data[i];
+                    if(data[i].indexOf("<code>")>-1){
+                        while(data[i].indexOf("</code>")===-1){
+                            i++;
+                            var code = data[i];
+                            if(data[i].indexOf("</code>")===-1){
+                                code = data[i].replace(/</g,"&lt;").replace(/>/g,"&gt;");
+                            }
+                            contents[curr]+="<br>"+code;
+                        }
+                    }
                 }
                 i++;
             }
@@ -38,17 +48,18 @@ for(var i=0;i<data.length;i++){
     }
 }
 
-var home = "";
+var home = "<h3>Welcome to deva-codes</h3><h5>Visit one of the below:</h5><ul>";
 for(var i=0;i<urls.length;i++){
-    home+="<br><a href='"+urls[i]+"'>"+heads[urls[i]]+"</a>";
+    home+="<li><a href='"+urls[i]+"'>"+heads[urls[i]]+"</a></li>";
 }
+home+="</ul>";
 
 function serverFunc(req,res){
+    res.writeHead(200,{"Content-Type":"text/html"});
     if(req.url==="/"){
         res.end(home);        
     } else {
         var url = req.url.substring(1);
-        res.writeHead(200,{"Content-Type":"text/html"});
         if(urls.indexOf(url)!==-1){
             res.end(contents[url].replace(/    /g,"&ensp;&ensp;&ensp;&ensp;"));
         } else {
