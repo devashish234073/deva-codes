@@ -1,6 +1,6 @@
 -------------------------------------------------
 ----URL:RndNumDiffProgs
-----HEAD:Random number generator in different languages
+----HEAD:Random number generators
 ----CONTENT-START:
 <h4>Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html">docs.oracle.com</a></h4>
 <code>Random rand = new Random();
@@ -12,15 +12,132 @@ int value = rand.nextInt(50);  //generates number between [0,49]</code>
 a = random.randint(1,100) #generates number between [1,100]
 </code>
 <h4>c++</h4>
-<code>#include&lt;iostream&gt;
-<br>#include&lt;cstdio&gt;
-<br>#include&lt;time.h&gt;
-<br>using namespace std;
-<br>int main(int argc,char* argv[]){
-<br>    srand(time(NULL));
-<br>    int a = rand();
-<br>}</code>
+<code>
+#include<iostream>
+#include<cstdio>
+#include<time.h>
+using namespace std;
+int main(int argc,char* argv[]){
+    srand(time(NULL));
+    int a = rand();
+}
+</code>
 <h4>Perl</h4>
 <code>$a = rand(); //generates number between [0,1)</code>
+----CONTENT-END:
+-------------------------------------------------
+
+-------------------------------------------------
+----URL:CompareOnTwoKeys
+----HEAD:Compare based on two keys
+----CONTENT-START:
+<h4>First we need to create a class with two fields(the keys)</h4>
+<ul>
+<li>And we need to implement the "Comparable" interface.</li>
+<li>And we need implement the "compareTo" method as below:</li>
+</ul>
+<code>
+public class Student implements Comparable<Student> {
+    public String name;
+    public int id;
+    public Student(int id,String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "{N:"+name+" id:"+id+"}";
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        if(o.id!=this.id){
+            return this.id-o.id;
+        } else {
+            return this.name.toLowerCase().compareTo(o.name.toLowerCase());
+        }
+    }
+}
+</code>
+<ul>
+<h4>Using the Above class</h4>
+<ul>
+<li>We can have instances of the "Student" class in the main method</li>
+<li>Then we can put them all in an arrayList</li>
+<li>Finally we can use the "Collections.sort" method</li>
+</ul>
+<code>import java.util.ArrayList;
+import java.util.Collections;
+
+public class TheMainClass {
+
+    public static void main(String[] args) {
+        ArrayList<Student> lst = new ArrayList<Student>();
+        Student s8 = new Student(12,"Vivek");
+        Student s1 = new Student(23,"Devashish");
+        Student s0 = new Student(23,"Anurag");
+        Student s2 = new Student(91,"Pranav");
+        Student s9 = new Student(91,"paranav");
+        Student s5 = new Student(44,"Suresh");
+        Student s7 = new Student(25,"Rajnish");
+        Student s4 = new Student(33,"Rajeev");
+        Student s6 = new Student(62,"Ghanshyam");
+        Student s3 = new Student(21,"Manish");
+        lst.add(s8);
+        lst.add(s1);
+        lst.add(s2);
+        lst.add(s5);
+        lst.add(s7);
+        lst.add(s4);
+        lst.add(s6);
+        lst.add(s3);
+        lst.add(s0);
+        lst.add(s9);
+        System.out.println(lst);
+        Collections.sort(lst);
+        System.out.println(lst);
+    }
+}</code>
+----CONTENT-END:
+-------------------------------------------------
+-------------------------------------------------
+----URL:SortingObjectsPython
+----HEAD:Sorting objects in python
+----CONTENT-START:
+<h4>More at <a href="https://docs.python.org/2/howto/sorting.html#key-functions">docs.python.org</a></h4>
+<code>
+class Student:
+    def __init__(self,id,name):
+        self.name = name
+        self.id = id
+
+    def __str__(self):
+        return f"id:{self.id} N:{self.name}";
+
+s0 = Student(9,"Bagula")
+s1 = Student(10,"Devashish")
+s2 = Student(21,"Kalpesh")
+s3 = Student(10,"Anurag")
+s4 = Student(13,"Rajesh")
+s5 = Student(18,"Ramesh")
+s6 = Student(10,"anurag")
+s7 = Student(12,"Suresh")
+s8 = Student(10,"Akash")
+s9 = Student(11,"Nimesh")
+
+lst = [s0,s1,s2,s3,s4,s5,s6,s7,s8,s9]
+for s in lst:
+    print(s)
+
+byId = sorted(lst, key=lambda stu: stu.id)
+byName = sorted(lst, key=lambda stu: stu.name.lower())
+
+print("------------byId-------------")
+for stu in byId:
+    print(stu)
+print("------------byName-----------")
+for stu in byName:
+    print(stu)
+</code>
 ----CONTENT-END:
 -------------------------------------------------
