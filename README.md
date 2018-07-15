@@ -16,3 +16,5 @@ And
 #### 1."----HEAD:" and "----CONTENT-START:" must come after "----URL:"
 #### 2."----CONTENT-END:" must come after "----CONTENT-START:"
 
+##### Codes inside &lt;code&gt; tag keeps the new line and "multiple of 4 spaces" maintained
+
