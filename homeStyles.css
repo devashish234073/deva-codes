@@ -1,0 +1,38 @@
+div{
+    width:310px;
+    padding-left:55px;
+    height:40px;
+    overflow:auto;
+}
+#top{
+    color:white;
+    background-color:black;
+    border:1px solid black;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    padding-top:5px;
+}
+#bottom{
+    border:1px solid black;
+    padding-top:5px;
+    padding-bottom:5px;
+    height:400px;
+}
+a{
+    text-decoration:none;
+    color:purple;
+    background-color:rgb(210,210,180);
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    padding:3px;
+    padding-left:8px;
+    width:250px;
+    display:block;
+    margin-bottom:1px;
+    font-size:14px;
+}
+a:hover{
+    background-color:lightgray;
+}

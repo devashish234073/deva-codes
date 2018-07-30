@@ -59,7 +59,6 @@ public class Student implements Comparable<Student> {
     }
 }
 </code>
-<ul>
 <h4>Using the Above class</h4>
 <ul>
 <li>We can have instances of the "Student" class in the main method</li>
@@ -139,5 +138,777 @@ print("------------byName-----------")
 for stu in byName:
     print(stu)
 </code>
+----CONTENT-END:
+-------------------------------------------------
+
+-------------------------------------------------
+----URL:AngularJS
+----HEAD:AngularJS
+----CONTENT-START:
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div ng-app="">
+
+<h4>ng-app and ng-model</h4>
+
+<code>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+<input type="text" ng-model="name">
+{{name}}
+</div>
+</body>
+</html>
+</code>
+
+<div id="output">
+<input type="text" ng-model="name1">
+{{name1}}
+</div>
+
+<h4>ng-bind</h4>
+
+<code>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="">
+<input type="text" ng-model="name">
+<div ng-bind="name"></div>
+</div>
+</body>
+</html>
+</code>
+
+<div id="output">
+<input type="text" ng-model="name2">
+<div ng-bind="name2"></div>
+</div>
+
+<h4>ng-init</h4>
+
+<code>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="name='Devashish'">
+<input type="text" ng-model="name">
+<div ng-bind="name"></div>
+</div>
+</body>
+</html>
+</code>
+
+<div id="output">
+<div ng-init="name3='Devashish'">
+<input type="text" ng-model="name3">
+<div ng-bind="name3"></div>
+</div>
+</div>
+
+<h4>expressions</h4>
+
+<code>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-init="n1=4;n2=7;nums=[8,9];numObj={n1:5,n2:2}">
+{{2+8}}<br>
+{{n1*n2}}<br>
+{{nums[0]-nums[1]}}<br>
+{{numObj.n1/numObj.n2}}<br>
+</div>
+</body>
+</html>
+</code>
+
+<div id="output">
+<div ng-init="n1=4;n2=7;nums=[8,9];numObj={n1:5,n2:2}">
+{{2+8}}<br>
+{{n1*n2}}<br>
+{{nums[0]-nums[1]}}<br>
+{{numObj.n1/numObj.n2}}<br>
+</div>
+</div>
+
+<h4>css classes</h4>
+
+<code>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+input.ng-invalid {
+    background-color: khaki;
+}
+input.ng-valid {
+    background-color: green;
+    color:white;
+}
+input.ng-touched {
+    border:1px solid yellow;
+}
+input.ng-untouched {
+    border:1px solid green;
+}
+</style>
+<body>
+<div ng-app="">
+<form name="myForm">
+<table>
+<tr><td>min-length:5 {{myForm.n1.$valid}}</td><td><input type="text" name="n1" ng-model="myName" ng-minlength="5" required></td></tr>
+<tr><td>email {{myForm.n2.$valid}}</td><td><input type="email" name="n2" ng-model="myEmail" required></td></tr>
+</table>
+</form>
+</div>
+</body>
+</html>
+</code>
+
+<div id="output">
+<style>
+.ngTxt.ng-invalid {
+    background-color: khaki;
+}
+.ngTxt.ng-valid {
+    background-color: green;
+    color:white;
+}
+.ngTxt.ng-touched {
+    border:1px solid yellow;
+}
+.ngTxt.ng-untouched {
+    border:1px solid green;
+}
+</style>
+<form name="myForm">
+<table>
+<tr><td>min-length:5 {{myForm.n1.$valid}}</td><td><input class="ngTxt" type="text" name="n1" ng-model="myName" ng-minlength="5" required></td></tr>
+<tr><td>email {{myForm.n2.$valid}}</td><td><input class="ngTxt" type="email" name="n2" ng-model="myEmail" required></td></tr>
+</table>
+</form>
+</div>
+
+</div>
+----CONTENT-END:
+-------------------------------------------------
+
+-------------------------------------------------
+----URL:webServerInJava
+----HEAD:Creating web-server in java
+----CONTENT-START:
+<h4>First we need to create a <font color='blue'>java.net.SocketServer</font></h4>
+<code>
+final int PORT = 8888;
+ServerSocket server = null;
+try{
+    server = new ServerSocket(PORT);
+}catch(java.io.IOException ioe){
+    System.out.println(ioe);
+}
+</code>
+<h5>Next we need to wait for connection using <font color='blue'>accept()</font> function</h5>
+<code>
+Socket client=server.accept();
+</code>
+<h5>Next we need to take handle of <font color='blue'>&lt;IS&gt;</font> and <font color='blue'>&lt;OS&gt;</font></h5>
+<code>
+java.io.InputStream is = client.getInputStream();
+java.io.OutputStream os = client.getOutputStream();
+</code>
+<h5>Now we need to retrieve the <font color='blue'>request</font> out of <font color='blue'>&lt;IS&gt;</font></h5>
+<code>
+String request = "";
+int c=0;
+do{
+    c=is.read();
+    request+=(char)c;
+} while(is.available()>0);
+</code>
+<h5>A sample request looks like: </h5>
+<code>
+GET /test HTTP/1.1
+Host: localhost:8888
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9,hi;q=0.8,mt;q=0.7
+Cookie: Idea-25dc6193=13256a51-3d55-4627-b6b7-2277c59c802f
+</code>
+<p>Here the first line can be parsed to infere the following:<br>1. 'GET' method was used<br>2. 'http://localhost:8888/test' url was hit.</p>
+<h4><font color='blue'>Response</font> is created as below</h4>
+<code>
+String content="<html><body><font color='green'>Response from web server</font></body></html>";
+String header="200 OK HTTP/1.1\r\n";
+    header+="Content-length: "+content.length()+"\r\n";
+    header+="\r\n";
+String resp=header+content;
+os.write(resp.getBytes());
+</code>
+<h4><font color='green'>Entire code</font></h4>
+<code>
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class TheMainClass {
+
+    public static void main(String[] args) {
+        final int PORT = 8888;
+        ServerSocket server = null;
+        try{
+            server = new ServerSocket(PORT);
+            Socket client=server.accept();
+            java.io.InputStream is = client.getInputStream();
+            java.io.OutputStream os = client.getOutputStream();
+            String request = "";
+            int c=0;
+            do{
+                c=is.read();
+                request+=(char)c;
+            } while(is.available()>0);
+            String content="<html><body><font color='green'>Response from web server</font></body></html>";
+            String header="HTTP/1.1 200 OK\r\n";
+            header+="Content-length: "+content.length()+"\r\n";
+            header+="\r\n";
+            String resp=header+content;
+            os.write(resp.getBytes());
+        } catch(java.io.IOException ioe){
+            System.out.println(ioe);
+        }
+    }
+}
+</code>
+<p>To keep the server running, put everything after 'server' initialization<br> inside an infinite loop</p>
+----CONTENT-END:
+-------------------------------------------------
+
+-------------------------------------------------
+----URL:servletsWithApacheTomcat
+----HEAD:Servlets with apache tomcat
+----CONTENT-START:
+<h4><font color='blue'>Environment variables</font> to set after downloading</h4>
+<code>
+For 'apache-tomcat-8.5.31' sample environment variables are:
+PATH            F:\Softwares\tomcat-server\apache-tomcat-8.5.31\bin
+CATALINA_HOME    F:\Softwares\tomcat-server\apache-tomcat-8.5.31
+</code>
+<h4>Checking in command line</h4>
+<p>catalina --version should show something similar to below:</p>
+<code>
+C:\Users\Deva>catalina --version
+Using CATALINA_BASE:   "F:\Softwares\tomcat-server\apache-tomcat-8.5.31"
+Using CATALINA_HOME:   "F:\Softwares\tomcat-server\apache-tomcat-8.5.31"
+Using CATALINA_TMPDIR: "F:\Softwares\tomcat-server\apache-tomcat-8.5.31\temp"
+Using JRE_HOME:        "C:\Program Files\Java\jdk-9.0.4"
+Using CLASSPATH:       "F:\Softwares\tomcat-server\apache-tomcat-8.5.31\bin\bootstrap.jar;F:\Softwares\tomcat-server\apache-tomcat-8.5.31\bin\tomcat-juli.jar"
+Usage:  catalina ( commands ... )
+commands:
+  debug             Start Catalina in a debugger
+  debug -security   Debug Catalina with a security manager
+  jpda start        Start Catalina under JPDA debugger
+  run               Start Catalina in the current window
+  run -security     Start in the current window with security manager
+  start             Start Catalina in a separate window
+  start -security   Start in a separate window with security manager
+  stop              Stop Catalina
+  configtest        Run a basic syntax check on server.xml
+  version           What version of tomcat are you running?
+</code>
+<h4>To <font color='green'>start</font> and <font color='red'>stop</font> the server:</h4>
+<code>
+Way1: through command line
+catalina start
+catalina stop
+Way2: directly launching the batch files
+'startup.bat' and 'shutdown.bat' files are present in the PATH we added
+</code>
+<h4>Tomcat code</h4>
+<p>Entire tomcat code resides in the CATALINA_HOME\lib folder.<br>Following are the files</p>
+<ul>
+<li>annotations-api.jar</li>
+<li>catalina.jar</li>
+<li>catalina-ant.jar</li>
+<li>catalina-ha.jar</li>
+<li>catalina-storeconfig.jar</li>
+<li>catalina-tribes.jar</li>
+<li>ecj-4.6.3.jar</li>
+<li>el-api.jar</li>
+<li>jasper-el.jar</li>
+<li>jaspic-api.jar</li>
+<li>jsp-api.jar</li>
+<li>servlet-api.jar</li>
+<li>tomcat-api.jar</li>
+<li>tomcat-coyote.jar</li>
+<li>tomcat-dbcp.jar</li>
+<li>tomcat-i18n-es.jar</li>
+<li>tomcat-i18n-fr.jar</li>
+<li>tomcat-i18n-ja.jar</li>
+<li>tomcat-jdbc.jar</li>
+<li>tomcat-jni.jar</li>
+<li>tomcat-util.jar</li>
+<li>tomcat-util-scan.jar</li>
+<li>tomcat-websocket.jar</li>
+<li>tomcat-api.jar</li>
+</ul>
+<h4><font color='blue'>Deploying</font> an app</h4>
+<span>apps are deployed into CATALINA_HOME\webapps</span>
+<br><span>directory structure for a webapp (say 'FirstWeb')</span>
+<ul>
+<li>FirstWeb</li>
+<li>|--META-INF</li>
+<li>|-----MANIFEST.MF</li>
+<li>|-----war-tracker</li>
+<li>|--WEB-INF</li>
+<li>|-----classes</li>
+<li>|-----lib</li>
+<li>|-----web.xml</li>
+<li>|--*.jsp</li>
+</ul>
+<span>for annotation config 'web.xml' file is not required</span>
+<h4>A sample application</h4>
+<span>Directory structure</span>
+<ul>
+<li>FirstWeb</li>
+<li>|--META-INF</li>
+<li>|--WEB-INF</li>
+<li>|-----classes</li>
+<li>|--------Home.class</li>
+<li>|-----lib</li>
+</ul>
+<span>Content of 'Home.java':</span>
+<code>
+@WebServlet("/")
+public class Home extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter pw = response.getWriter();
+        pw.write("<html><input type='text' placeholder='Name'></html>");
+    }
+}
+</code>
+<span>To compile the <font color='green'>'Home.java'</font> we need to include all the jars from <font color='blue'>CATALINA_HOME\lib</font>:</span>
+<code>
+javac -cp "%CATALINA_HOME%\lib\annotations-api.jar;%CATALINA_HOME%\lib\catalina.jar;%CATALINA_HOME%\lib\catalina-ant.jar;%CATALINA_HOME%\lib\catalina-ha.jar;%CATALINA_HOME%\lib\catalina-storeconfig.jar;%CATALINA_HOME%\lib\catalina-tribes.jar;%CATALINA_HOME%\lib\ecj-4.6.3.jar;%CATALINA_HOME%\lib\el-api.jar;%CATALINA_HOME%\lib\jasper.jar;%CATALINA_HOME%\lib\jasper-el.jar;%CATALINA_HOME%\lib\jaspic-api.jar;%CATALINA_HOME%\lib\jsp-api.jar;%CATALINA_HOME%\lib\servlet-api.jar;%CATALINA_HOME%\lib\tomcat-api.jar;%CATALINA_HOME%\lib\tomcat-coyote.jar;%CATALINA_HOME%\lib\tomcat-dbcp.jar;%CATALINA_HOME%\lib\tomcat-i18n-es.jar;%CATALINA_HOME%\lib\tomcat-i18n-fr.jar;%CATALINA_HOME%\lib\tomcat-i18n-ja.jar;%CATALINA_HOME%\lib\tomcat-jdbc.jar;%CATALINA_HOME%\lib\tomcat-jni.jar;%CATALINA_HOME%\lib\tomcat-util.jar;%CATALINA_HOME%\lib\tomcat-util-scan.jar;%CATALINA_HOME%\lib\tomcat-websocket.jar;%CATALINA_HOME%\lib\websocket-api.jar;%CATALINA_HOME%\webapps\FirstWeb\WEB-INF\classes" *.java
+</code>
+<h4><font color='blue'>Servlet Life Cycle</font></h4>
+<ul>
+<li>Life cycle is entirely managed by server container</li>
+<li>Life cycle starts with the first request</li>
+<li>Life cycle ends when application is undeployed or server is shut</li>
+</ul>
+<span class="twoCornerRoundedGREEN">Servlet lifecycle for First Request</span>
+<ul>
+<li>Container scans 'web.xml' and finds apt servlet class as per URL pattern<br>[for annotations it looks the servlets accordingly]</li>
+<li>Once it finds the servlet it loads and instantiate the Servlet<br>[using class loader apis]
+<ul>
+<li>only one instance of the servlet is created</li>
+<li>in subsequent request same instance is used</li>
+<li><b>allocates 'ServletConfig' and 'ServletContext' objects</b></li>
+<li><b>allocates a new thread to the request</b></li>
+<li><b>allocates HTTPServletRequest and HTTPServletResponse and attaches to incoming req</b></li>
+</ul>
+</li>
+<li>Calls the <font color='blue'>init()</font> method<br>[GenericServlet has this]<br><span>Possible uses:</span>
+<ul>
+<li>database setup can be done here</li>
+<li>Any other one time activity</li>
+</ul>
+</li>
+<li><b>Calls the <font color='blue'>service()</font> method</b><br>[HTTPServlet class has this]</li>
+<li>Calls the <font color='blue'>destroy()</font> method<br>[GenericServlet has this]
+<ul>
+<li>Called when application is undeployed or server is shut</li>
+<li>Any cleanp activity can be done here</li>
+</ul>
+</li>
+</ul>
+<span>Note:</span>
+<ul>
+<li>init() and destroy() are called only once in the lifecycle</li>
+<li>service() is called everytime a request comes for the servlet</li>
+</ul>
+<span class="twoCornerRoundedGREEN">Servlet lifecycle for Subsequent Request</span>
+<ul>
+<li>Those in bold in the previous steps</li>
+</ul>
+<h4>Understanding lifecycle</h4>
+<span>We compile the following servlets</span>
+<code>
+@WebServlet("/")
+public class Home extends HttpServlet {
+
+    public void init(){
+        System.out.println("init");
+    }
+	
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("doGet");
+        PrintWriter pw = response.getWriter();
+        pw.write("<html><input type='text' placeholder='Name::::'></html>");
+    }
+
+    public void destroy(){
+        System.out.println("destroy");
+    }
+}
+</code>
+<div id="output">
+<br><span>After hitting <a href="http://localhost:8080/FirstWeb">http://localhost:8080/FirstWeb</a> for the <font color='green'>first</font> time</span>
+<ul>
+<li>init</li>
+<li>doGet</li>
+</ul>
+<span>After hitting <a href="http://localhost:8080/FirstWeb">http://localhost:8080/FirstWeb</a> for the <font color='green'>second</font> time</span>
+<ul>
+<li>doGet</li>
+</ul>
+<span>On <font color='red'>shutting</font> down tomcat</span>
+<ul>
+<li>destroy</li>
+</ul>
+</div>
+<h4>To change the <font color='voilet'>PORT</font> for tomcat</h4>
+<span>Need to change <b>Connector port</b> in '<font color='blue'>%CATALINA_HOME%\conf\server.xml</font>' file</span>
+<h4><font color='blue'>JSP</font> - Java Server Pages</h4>
+<span class="twoCornerRoundedGREEN">Problems with HTML</span>
+<ul>
+<li>renders static data only</li>
+<li>IO Operation to read and write HTML templates is time consuming process</li>
+</ul>
+<span class="twoCornerRoundedGREEN">JSP features</span>
+<ul>
+<li>contains html as well as java code</li>
+<li>gets executed at the server side and rendered to client</li>
+<li>has expression language</li>
+<li>has java tag libs</li>
+<li><span class="twoCornerRoundedBLUE">Translation</span>
+<ul>
+<li>The HTML+java code in the jsp gets <b>translated</b> into a servlet containing java only<br>and gets compiled to <b>.class</b> file</li>
+</ul></li>
+
+<li><span class="twoCornerRoundedBLUE">Scriptlets</span>
+<ul>
+<li>Spriptlets are sections within jsp that contains java code</li>
+<li>Scriptlets starts with <blue>&lt;%</blue> and ends with <blue>%&gt;</blue></li>
+<li>all the code within scriptlets goes to the _jspService() method
+<ul>
+<li>public class Login_jsp{</li>
+<li>&ensp;&ensp;&ensp;&ensp;_jspService(){</li>
+<li>&ensp;&ensp;&ensp;&ensp;}</li>
+<li>}</li>
+</ul>
+</li>
+</ul></li>
+
+<li><span class="twoCornerRoundedBLUE">Expressions</span>
+<ul>
+<li>Expressions are sections within jsp that contains java code that goes to out.print()
+<ul>
+<li>public class Login_jsp{</li>
+<li>&ensp;&ensp;&ensp;&ensp;_jspService(){</li>
+<li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;out.print([expression value]);{</li>
+<li>&ensp;&ensp;&ensp;&ensp;}</li>
+<li>}</li>
+</ul>
+</li>
+<li>Expressions starts with <blue>&lt;%=</blue> and ends with <blue>%&gt;</blue></li>
+</ul></li>
+
+<li><span class="twoCornerRoundedBLUE">Declarations</span>
+<ul>
+<li>Declarations are sections within jsp that contains java declarations</li>
+<li>Declarations starts with <blue>&lt;%!</blue> and ends with <blue>%&gt;</blue></li>
+<li>Declaration directly can be of methods or instance varibles</li>
+<li>Declaration diectly goes into the Login_jsp class [demonstrated next]</li>
+</ul></li>
+
+</ul>
+
+<h4>First jsp project</h4>
+<span class="twoCornerRoundedGREEN">Dir structure</span>
+<ul>
+<li>FirstWeb</li>
+<li>|--META-INF</li>
+<li>|--WEB-INF</li>
+<li>|-----classes</li>
+<li>|--------Home.class</li>
+<li>|-----lib</li>
+<li>|--Home.jsp</li>
+</ul>
+<span class="twoCornerRoundedGREEN">Content of Home.java</span>
+<code>
+@WebServlet("/")
+public class Home extends HttpServlet {
+	
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/Home.jsp").forward(request,response);
+    }
+}
+</code>
+<span class="twoCornerRoundedGREEN">Content of Home.jsp</span>
+<code>
+<html>
+<body>
+<%!String txt="<br>Hello";%>
+<%!String getText(){return "<br>Hi";}%>
+<%=txt%>
+<%=getText()%>
+<%if(txt.equals("Hello")){txt="<br>yes it is Hello";}%>
+<%=txt%>
+</body>
+</html>
+</code>
+<span class="twoCornerRoundedGREEN">jsp translation</span>
+<ul>
+<li>A file named <b>Login_jsp.java</b> gets created in '<blue>%CATALINA_HOME%</blue>\work\Catalina\localhost\<blue>FirstWeb</blue>\org\apache\jsp' directory</li>
+<li>File gets compiled into <b>Login_jsp.class</b></li>
+</ul>
+<span>Content of <green>Login_jsp.java</green></span>
+<code>
+public final class Login_jsp extends ......{
+    String txt="<br>Hello";
+    String getText(){return "<br>Hi";}
+    public void _jspService(HttpServletRequest request, HttpServletResponse response) throws ... {
+        ...........//multiple lines here
+        out.write("<html>\r\n");
+        out.write("<body>\r\n");
+        out.write('\r');
+        out.write('\n');
+        out.write('\r');
+        out.write('\n');
+        out.print(txt);
+        out.write('\r');
+        out.write('\n');
+        out.print(getText());
+        out.write('\r');
+        out.write('\n');
+        if(txt.equals("Hello")){txt="<br>yes it is Hello";}
+        out.write('\r');
+        out.write('\n');
+        out.print(txt);
+        out.write("\r\n");
+        out.write("</body>\r\n");
+        out.write("</html>");
+        ...........//multiple lines here
+    }
+}
+</code>
+<span class="twoCornerRoundedRED">Note</span>
+<ul>
+<li>compilation of jsp happens only once in the entire lifecycle</li>
+<li>if a jsp is changed while tomcat is running, entire translation <br>happens again when the servlet is requested again</li>
+</ul>
+<h4>HttpSession vs Cookies</h4>
+<span class="twoCornerRoundedGREEN">We will have the following files as our servlets</span>
+<ul>
+<li>
+Home.java
+<code>
+@WebServlet({"/","/Home"})
+public class Home extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String html = "<html><body><form method='GET'><input type='text' name='txt'>";
+        html+="<input type='button' value='Save as cookie' onclick='saveAsCookie()'>";
+        html+="<input type='button' value='Save into HttpSession' onclick='saveIntoHttpSession()'></form>";
+        html+="<script>";
+        html+="function doSubmit(actionName) {";
+        html+="    var frm=document.querySelector('form');";
+        html+="    frm.setAttribute('action',actionName);";
+        html+="    frm.submit();";
+        html+="}";
+        html+="function saveAsCookie() {doSubmit('saveAsCookie');}";
+        html+="function saveIntoHttpSession() {doSubmit('saveIntoHttpSession');}";
+        html+="</script></body></html>";
+        response.getWriter().write(html);
+    }
+}
+</code>
+</li>
+<li>
+SaveAsCookie.java
+<code>
+@WebServlet("/saveAsCookie")
+public class SaveAsCookie extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Cookie c1 = new Cookie("cookieData1",request.getParameter("txt"));
+        response.addCookie(c1);
+        PrintWriter pw = response.getWriter();
+        pw.write("previous form data is set into cookie");
+    }
+}
+</code>
+</li>
+<li>
+SaveIntoHttpSession.java
+<code>
+@WebServlet("/saveIntoHttpSession")
+public class SaveIntoHttpSession extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+	
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter pw = response.getWriter();
+        HttpSession httpSession = request.getSession();
+        httpSession.setAttribute("sessionData1", request.getParameter("txt"));
+        pw.write(httpSession.getAttribute("sessionData1")+" is set into HttpSession");
+    }
+}
+</code>
+</li>
+</ul>
+<ul>
+<li><greenN>Home.java</greenN> is mapped to '/' and '/Home' url</li>
+<li><greenN>SaveAsCookie.java</greenN> is mapped to '/saveAsCookie' url</li>
+<li><greenN>SaveIntoHttpSession.java</greenN> is mapped to '/saveIntoHttpSession' url</li>
+<li>Cache is stored in browser. [For chrome it can be seen in application tab in the developers tools]</li>
+<li>HttpSession data is stored in server side</li>
+</ul>
+----CONTENT-END:
+-------------------------------------------------
+
+-------------------------------------------------
+----URL:SpringFramework
+----HEAD:Spring Framework
+----CONTENT-START:
+<h4>Spring Framework</h4>
+<span class="twoCornerRoundedGREEN">Libraries required</span>
+<ul>
+<li>spring-aop</li>
+<li>spring-beans</li>
+<li>spring-context</li>
+<li>spring-core</li>
+<li>spring-expression</li>
+<li>commons-logging</li>
+</ul>
+<span class="twoCornerRoundedGREEN">At the time of writing this, I am using the following versions:</span>
+<ul>
+<li>spring-aop<blue>-4.3.9.RELEASE</blue>.jar</li>
+<li>spring-beans<blue>-4.3.9.RELEASE</blue>.jar</li>
+<li>spring-context<blue>-4.3.9.RELEASE</blue>.jar</li>
+<li>spring-core<blue>-4.3.9.RELEASE</blue>.jar</li>
+<li>spring-expression<blue>-4.3.9.RELEASE</blue>.jar</li>
+<li>commons-logging<blue>-1.2</blue>.jar</li>
+</ul>
+<h4>How to download</h4>
+<span class="twoCornerRoundedBLUE">Way 1</span>
+<ul><li>Searching each of these from <a href="https://mvnrepository.com">https://mvnrepository.com</a></li></ul>
+<span class="twoCornerRoundedBLUE">Way 2</span>
+<ul><li>By creating a maven project with following content in pom.xml</li></ul>
+<code>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com</groupId>
+    <artifactId>mvnSecond</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Brussels-SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
+
+</project>
+</code>
+<green>Dir structure used</green>
+<ul>
+<li>|--MVNSecond</li>
+<li>|----src</li>
+<li>|------main</li>
+<li>|--------java</li>
+<li>|----------com</li>
+<li>|------------mvnSecond</li>
+<li>|--------------HelloConfig.java</li>
+<li>|----pom.xml</li>
+</ul>
+<green>mvn command used:</green>
+<ul><li>mvn compile<br>[after compile the spring jars gets downloaded into C:\Users\{Computer's Username}\.m2\repository\org\springframework' directory]</li></ul>
+----CONTENT-END:
+-------------------------------------------------
+
+-------------------------------------------------
+----URL:MavenProject
+----HEAD:Maven Project
+----CONTENT-START:
+<h4>Dir structure <green>before compile</green></h4>
+<ul>
+<li>|--MavenDemo</li>
+<li>|----src</li>
+<li>|------main</li>
+<li>|--------java</li>
+<li>|----------com</li>
+<li>|------------MavenDemoMain.java</li>
+<li>|----pom.xml</li>
+</ul>
+<h4>Dir structure after <green>mvn compile</green> command</h4>
+<ul>
+<li>|--MavenDemo</li>
+<li>|----src</li>
+<li>|------main</li>
+<li>|--------java</li>
+<li>|----------com</li>
+<li>|------------MavenDemoMain.java</li>
+<li>|----<blue>target</blue></li>
+<li>|------<blueN>classes</blueN></li>
+<li>|--------<blueN>com</blueN></li>
+<li>|----------<greenN>MavenDemoMain.class</greenN></li>
+<li>|------<blue>generated-sources</blue></li>
+<li>|--------<blueN>annotations</blueN></li>
+<li>|------<blue>maven-status</blue></li>
+<li>|--------<blueN>maven-compiler-plugin</blueN></li>
+<li>|----------<blueN>compile</blueN></li>
+<li>|------------<blueN>default-compile</blueN></li>
+<li>|--------------<greenN>createdFiles.lst</greenN></li>
+<li>|--------------<greenN>inputFiles.lst</greenN></li>
+<li>|----pom.xml</li>
+</ul>
+<br>
+<span class="twoCornerRoundedBLUE">Try below options :.</span>
+<h4 class="grab" onclick="createNewProject('MavenProject_newProject',['pom.xml'])">Create <blueN>new project</blueN></h4>
+<div id="MavenProject_newProject"></div>
+<h4 class="grab" onclick="addNewClass('MavenProject_newProject',['pom.xml'])">Create <blueN>new class</blueN></h4>
+<h4 class="grab" onclick="MavenProject_runMvnCompile()">Run <blueN>mvn compile</blueN></h4>
+<div id="MavenProject_pom"></div>
 ----CONTENT-END:
 -------------------------------------------------

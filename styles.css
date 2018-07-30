@@ -1,0 +1,129 @@
+h1,h2,h3,h4,h5{
+    box-shadow:1px 1px 7px black;
+    width:450px;
+    font-weight:normal;
+    padding-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    text-align:center;
+    border-radius:15px;
+}
+h5{
+    font-size:14px;
+}
+h4{
+    font-size:15px;
+}
+h3{
+    font-size:16px;
+}
+h2{
+    font-size:17px;
+}
+.twoCornerRoundedBLACK{
+    background-color:black;
+    color:white;
+    padding:1px;
+    border-top-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.twoCornerRoundedBLUE{
+    background-color:blue;
+    color:white;
+    padding:1px;
+    border-top-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.twoCornerRoundedGREEN{
+    background-color:green;
+    color:white;
+    padding:1px;
+    border-top-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.twoCornerRoundedRED{
+    background-color:red;
+    color:white;
+    padding:1px;
+    border-top-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+h1{
+    font-size:18px;
+}
+green{
+    color:green;
+    font-weight:bold;
+}
+blue{
+    color:blue;
+    font-weight:bold;
+}
+red{
+    color:red;
+    font-weight:bold;
+}
+greenN{
+    color:green;
+}
+blueN{
+    color:blue;
+}
+redN{
+    color:red;
+}
+a{
+    text-decoration:none;
+    background-color:rgb(200,200,200);
+    border-radius:10px;
+    color:purple;
+    padding-left:10px;
+    padding-right:10px;
+    font-weight:normal;
+    font-size:14px;
+}
+textarea{
+    border:1px solid yellow;
+    background-color:black;
+    color:yellow;
+    border-radius:10px;
+    padding:5px;
+}
+span{
+    font-size:13px;
+}
+code{
+    font-style:italic;
+    color:yellow;
+    font-size:11px;
+}
+code:hover{
+    color:lightgreen;
+}
+#output{
+    border:1px solid blue;
+    padding:5px;
+    width:450px;
+}
+#output::before{
+    content:"output:";
+}
+.code{
+    border:1px solid gold;
+    padding:5px;
+    background-color:black;
+    width:450px;
+    border-radius:10px;
+}
+li{
+    font-size:13px;
+}
+li:hover{
+    border-style:solid;
+    border-color:white;
+    border-width:0px 0px 0px 7px;
+}
+.grab{
+    cursor:-webkit-grab;
+    cursor:grab;
+}
